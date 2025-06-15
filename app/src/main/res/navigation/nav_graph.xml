@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainScreenFragment">
+
+    <fragment
+        android:id="@+id/mainScreenFragment"
+        android:name="co.il.catsapp.ui.fragments.MainScreenFragment"
+        android:label="fragment_main_screen"
+        tools:layout="@layout/fragment_main_screen" >
+        <action
+            android:id="@+id/main_to_settings"
+            app:destination="@id/appSettingsFragment" />
+        <action
+            android:id="@+id/main_to_game"
+            app:destination="@id/votingGameFragment" />
+        <action
+            android:id="@+id/main_to_fav_list"
+            app:destination="@id/favoriteListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/appSettingsFragment"
+        android:name="co.il.catsapp.ui.fragments.AppSettingsFragment"
+        android:label="fragment_app_settings"
+        tools:layout="@layout/fragment_app_settings" >
+        <action
+            android:id="@+id/settings_to_stats"
+            app:destination="@id/statsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteListFragment"
+        android:name="co.il.catsapp.ui.fragments.FavoriteListFragment"
+        android:label="fragment_favorite_list"
+        tools:layout="@layout/fragment_favorite_list" >
+        <action
+            android:id="@+id/fav_list_to_breed_info"
+            app:destination="@id/breedInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="co.il.catsapp.ui.fragments.StatsFragment"
+        android:label="fragment_stats"
+        tools:layout="@layout/fragment_stats" />
+    <fragment
+        android:id="@+id/votingGameFragment"
+        android:name="co.il.catsapp.ui.fragments.VotingGameFragment"
+        android:label="fragment_voting_game"
+        tools:layout="@layout/fragment_voting_game" >
+        <action
+            android:id="@+id/game_to_stats"
+            app:destination="@id/statsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/breedInfoFragment"
+        android:name="co.il.catsapp.ui.fragments.BreedInfoFragment"
+        android:label="fragment_breed_info"
+        tools:layout="@layout/fragment_breed_info" />
+</navigation>

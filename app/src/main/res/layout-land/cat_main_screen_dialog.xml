@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/cat_image"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:src="@mipmap/ic_cat" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/breed_name"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/btn_v2"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Breed Name"
+                android:textColor="@color/light_text"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/read_more"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_v1"
+                android:text="Read More"
+                android:textColor="@color/light_text"
+                app:backgroundTint="@null" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/cat_name_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/btn_v2"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Give Me a Name"
+            android:inputType="text"
+            android:padding="10dp"
+            android:text=""
+            android:textColor="@color/light_text"
+            android:textColorHint="@color/light_text_transparent"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/add_to_fav"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_v2"
+            android:text="Add to Favorite 😻"
+            android:textColor="@color/light_text"
+            android:textSize="32sp"
+            app:backgroundTint="@null" />
+    </LinearLayout>
+</LinearLayout>

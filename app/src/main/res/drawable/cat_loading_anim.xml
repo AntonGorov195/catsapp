@@ -1,0 +1,6 @@
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/cat_loading">
+    <target
+        android:name="catPath"
+        android:animation="@animator/loading_cat_anim"/>
+</animated-vector>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/light"
+    android:padding="5dp"
+    tools:context=".ui.fragments.MainScreenFragment" >
+    <!--    <Button-->
+<!--        android:id="@+id/cats_game"-->
+<!--        android:layout_margin="5dp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@drawable/btn_v1"-->
+<!--        app:backgroundTint="@color/dark"-->
+<!--        android:textColor="@color/light"-->
+<!--        android:textSize="18sp"-->
+<!--        android:text="Play The Cat Game!"/>-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical">
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/app_settings"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_v1"
+                app:backgroundTint="@null"
+                android:textColor="@color/light_text"
+                android:textSize="18sp"
+                android:text="App Settings"/>
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/favorite_cats"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_v1"
+                app:backgroundTint="@null"
+                android:textColor="@color/light_text"
+                android:textSize="18sp"
+                android:text="Favorite Cats"/>
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/refresh_cats_list"
+                android:layout_margin="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_v1"
+                app:backgroundTint="@null"
+                android:textColor="@color/light_text"
+                android:textSize="24sp"
+                android:text="Refresh!"/>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:visibility="gone"
+            android:layout_margin="5dp"
+            android:id="@+id/find_cats_list"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/loading_widget"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@color/dark"
+            android:src="@drawable/cat_loading_anim"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+</LinearLayout>
