@@ -8,9 +8,5 @@ data class BreedLocal(
     @PrimaryKey
     val id: String,
     val name:String,
-//    val weight: WeightLocal,
-//    val origin: String,
-//    val countryCode: String,
-//    val lifeSpan: LifeSpanLocal,
     val wikipediaUrl: String,
 )

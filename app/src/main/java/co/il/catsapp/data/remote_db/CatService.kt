@@ -12,4 +12,8 @@ interface CatService {
     @Headers("x-api-key: ${Constants.CAT_API_KEY}")
     @GET("https://api.thecatapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0")
     suspend fun getCats(@Query("limit") count: Int) : Response<List<CatRemote>>
+
+    @Headers("x-api-key: ${Constants.CAT_API_KEY}")
+    @GET("https://api.thecatapi.com/v1/images/{id}")
+    suspend fun getCatById(@Path("id") id:String) : Response<CatRemote>
 }

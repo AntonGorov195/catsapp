@@ -7,17 +7,19 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import co.il.catsapp.R
 import co.il.catsapp.data.models.Cat
 import co.il.catsapp.databinding.MainScreenRvBinding
-import com.bumptech.glide.Glide
+import co.il.catsapp.utils.setGlideImage
 
 class MainScreenRvAdapter(
     private val onItemClick: (List<Cat>, Int) -> Unit
 ) : ListAdapter<Cat, MainScreenRvAdapter.CatViewHolder>(DiffCallback()) {
-    class CatViewHolder(private val binding: MainScreenRvBinding) : RecyclerView.ViewHolder(binding.root) {
+    class CatViewHolder(private val binding: MainScreenRvBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(cat: Cat, onClick: (Cat) -> Unit) {
             binding.breedName.text = cat.breed.name
-            Glide.with(binding.root).load(cat.image).into(binding.catImageView)
+            setGlideImage(binding.root, binding.catImageView, cat.image)
             binding.root.setOnClickListener { onClick(cat) }
         }
     }
@@ -28,7 +30,8 @@ class MainScreenRvAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CatViewHolder {
-        val binding = MainScreenRvBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            MainScreenRvBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CatViewHolder(binding)
     }
 

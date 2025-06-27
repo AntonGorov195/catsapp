@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/light"
+    tools:context=".ui.fragments.CatFragment">
+
+    <TextView
+        android:id="@+id/cat_name"
+        android:layout_margin="5dp"
+        android:background="@drawable/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/light_text"
+        android:gravity="center"
+        android:textSize="48sp"
+        android:text="Cat Name" />
+
+    <ImageView
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        android:id="@+id/cat_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_cat" />
+    <Button
+        android:id="@+id/reminder_btn"
+        android:layout_margin="5dp"
+        app:backgroundTint="@null"
+        android:background="@drawable/btn_v1"
+        android:text="Remind me to pet in 5 seconds"
+        android:textSize="24sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_margin="5dp"
+        android:id="@+id/remove_cat"
+        app:backgroundTint="@null"
+        android:background="#9B1515"
+        android:text="REMOVE CAT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

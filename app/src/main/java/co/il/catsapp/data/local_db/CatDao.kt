@@ -17,7 +17,7 @@ interface CatDao {
     fun getAllFavoriteCats() : LiveData<List<CatBreedLocalJoin>>
 
     @Query("SELECT id FROM cats")
-    suspend fun getAllFavoriteCatsId() : List<String>
+    fun getAllFavoriteCatsId() : LiveData<List<String>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertBreed(breed: BreedLocal)
@@ -25,8 +25,10 @@ interface CatDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCat(cat: CatLocal)
 
+    @Transaction
+    @Query("SELECT * FROM cats WHERE id = :catId LIMIT 1")
+    fun getCat(catId: String) : CatBreedLocalJoin?
+
     @Query("DELETE FROM cats WHERE id = :catId")
     suspend fun deleteCat(catId: String)
-//    suspend fun insertBreed(breed: BreedLocal)
-//    suspend fun deleteCat(catId: String)
 }

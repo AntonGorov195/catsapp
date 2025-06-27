@@ -23,4 +23,5 @@ data class CatLocal(
     val image: String,
     val breedId: String,
     val name: String,
+    val alarmTime: Long? = null,
 )

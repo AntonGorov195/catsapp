@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("com.google.dagger.hilt.android")
     alias(libs.plugins.ksp)
+
+    id("androidx.navigation.safeargs")
 }
 
 android {
@@ -64,7 +66,4 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(libs.androidx.fragment)
     implementation(libs.glide)
-    implementation(libs.androidx.datastore.core)
-    implementation(libs.androidx.datastore.preferences.core)
-    implementation(libs.androidx.datastore.preferences)
 }

@@ -18,16 +18,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="CATSAPP" />
-<!--    <Button-->
-<!--        android:id="@+id/cats_game"-->
-<!--        android:layout_margin="5dp"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@drawable/btn_v1"-->
-<!--        app:backgroundTint="@color/dark"-->
-<!--        android:textColor="@color/light"-->
-<!--        android:textSize="18sp"-->
-<!--        android:text="Play The Cat Game!"/>-->
     <Button
         android:id="@+id/app_settings"
         android:layout_margin="5dp"

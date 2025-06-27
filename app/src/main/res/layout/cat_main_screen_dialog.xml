@@ -41,6 +41,7 @@
     </LinearLayout>
 
     <EditText
+        android:maxLength="@integer/max_cat_name_length"
         android:layout_margin="5dp"
         android:background="@drawable/btn_v2"
         android:id="@+id/cat_name_input"

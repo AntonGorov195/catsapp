@@ -10,8 +10,7 @@ import co.il.catsapp.data.local_db.models.BreedLocal
 import co.il.catsapp.data.local_db.models.CatLocal
 import co.il.catsapp.data.models.Cat
 
-@Database(entities = [CatLocal::class, BreedLocal::class], version = 2, exportSchema = false)
-@TypeConverters(Converters::class)
+@Database(entities = [CatLocal::class, BreedLocal::class], version = 3, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun catDao(): CatDao
 

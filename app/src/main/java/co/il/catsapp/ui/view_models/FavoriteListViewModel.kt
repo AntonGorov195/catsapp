@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import co.il.catsapp.data.models.Cat
 import co.il.catsapp.data.repos.CatRepository
+import co.il.catsapp.utils.Resource
 import co.il.catsapp.utils.getCatCount
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -18,5 +19,5 @@ import javax.inject.Inject
 @HiltViewModel
 class FavoriteListViewModel @Inject constructor(private val catRepository: CatRepository) :
     ViewModel() {
-
+    val favCats: LiveData<Resource<List<Cat>>> = catRepository.getFavoriteList()
 }

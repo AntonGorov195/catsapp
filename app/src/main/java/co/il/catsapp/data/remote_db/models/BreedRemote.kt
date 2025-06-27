@@ -7,10 +7,4 @@ data class BreedRemote(
     val name: String,
     @SerializedName("wikipedia_url")
     val wikipediaUrl: String?,
-//    val weight: WeightRemote,
-//    val origin: String,
-//    @SerializedName("country_code")
-//    val countryCode: String,
-//    @SerializedName("life_span")
-//    val lifeSpan: String,
 )

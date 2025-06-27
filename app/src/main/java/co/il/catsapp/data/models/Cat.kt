@@ -5,4 +5,5 @@ data class Cat(
     val breed: Breed,
     val image: String,
     val name: String,
+    val alarmTime: Long? = null,
 )

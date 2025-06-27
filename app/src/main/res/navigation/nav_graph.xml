@@ -14,11 +14,11 @@
             android:id="@+id/main_to_settings"
             app:destination="@id/appSettingsFragment" />
         <action
-            android:id="@+id/main_to_game"
-            app:destination="@id/votingGameFragment" />
-        <action
             android:id="@+id/main_to_fav_list"
             app:destination="@id/favoriteListFragment" />
+        <action
+            android:id="@+id/main_to_cat"
+            app:destination="@id/catFragment" />
     </fragment>
     <fragment
         android:id="@+id/appSettingsFragment"
@@ -35,8 +35,8 @@
         android:label="fragment_favorite_list"
         tools:layout="@layout/fragment_favorite_list" >
         <action
-            android:id="@+id/fav_list_to_breed_info"
-            app:destination="@id/breedInfoFragment" />
+            android:id="@+id/from_fav_list_to_cat"
+            app:destination="@id/catFragment" />
     </fragment>
     <fragment
         android:id="@+id/statsFragment"
@@ -47,14 +47,17 @@
         android:id="@+id/votingGameFragment"
         android:name="co.il.catsapp.ui.fragments.VotingGameFragment"
         android:label="fragment_voting_game"
-        tools:layout="@layout/fragment_voting_game" >
-        <action
-            android:id="@+id/game_to_stats"
-            app:destination="@id/statsFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_voting_game" />
     <fragment
-        android:id="@+id/breedInfoFragment"
-        android:name="co.il.catsapp.ui.fragments.BreedInfoFragment"
-        android:label="fragment_breed_info"
-        tools:layout="@layout/fragment_breed_info" />
+        android:id="@+id/catFragment"
+        android:name="co.il.catsapp.ui.fragments.CatFragment"
+        android:label="fragment_cat"
+        tools:layout="@layout/fragment_cat" >
+        <argument
+            android:name="catId"
+            app:argType="string"/>
+        <action
+            android:id="@+id/from_cat_to_vote_game"
+            app:destination="@id/votingGameFragment" />
+    </fragment>
 </navigation>

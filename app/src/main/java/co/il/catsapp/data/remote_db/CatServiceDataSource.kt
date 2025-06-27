@@ -4,6 +4,7 @@ import javax.inject.Inject
 
 class CatServiceDataSource @Inject constructor(
     private val catService:  CatService
-)  {
-    suspend fun getCats(count: Int) = catService.getCats(count)
+) : BaseDataSource() {
+    suspend fun getCats(count: Int) = getResult { catService.getCats(count) }
+//    suspend fun getCat(id: String) = getResult { catService.getCats(count) }
 }

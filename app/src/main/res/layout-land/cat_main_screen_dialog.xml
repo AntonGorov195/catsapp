@@ -48,6 +48,7 @@
         </LinearLayout>
 
         <EditText
+            android:maxLength="@integer/max_cat_name_length"
             android:id="@+id/cat_name_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
