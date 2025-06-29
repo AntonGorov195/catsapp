@@ -36,32 +36,32 @@ class AlarmReceiver : BroadcastReceiver() {
         val musicIntent = Intent(context, AlarmSoundService::class.java)
         context.startService(musicIntent)
         playAlarmMusic(context, catName, catId)
-
-        // Build notification that navigates to CatFragment
-        val navIntent = Intent(context, MainActivity::class.java).apply {
-            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            putExtra(Constants.CAT_BROADCAST_NAV, catId)
-        }
-
-        val pendingIntent = PendingIntent.getActivity(
-            context,
-            catId.hashCode(),
-            navIntent,
-            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-        )
-
-        val notification = NotificationCompat.Builder(context, Constants.NOTIFICATION_CHANNEL_ID)
-            .setPriority(NotificationCompat.PRIORITY_HIGH)
-            .setContentTitle("Alarm for ${catId}")
-            .setContentText("Tap to stop the alarm")
-            .setSmallIcon(R.drawable.cat_loading)
+//
+//        // Build notification that navigates to CatFragment
+//        val navIntent = Intent(context, MainActivity::class.java).apply {
+//            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+//            putExtra(Constants.CAT_BROADCAST_NAV, catId)
+//        }
+//
+//        val pendingIntent = PendingIntent.getActivity(
+//            context,
+//            catId.hashCode(),
+//            navIntent,
+//            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+//        )
+//
+//        val notification = NotificationCompat.Builder(context, Constants.NOTIFICATION_CHANNEL_ID)
+//            .setPriority(NotificationCompat.PRIORITY_HIGH)
+//            .setContentTitle("Alarm for ${catId}")
+//            .setContentText("Tap to stop the alarm")
+//            .setSmallIcon(R.drawable.cat_loading)
 //            .setContentIntent(pendingIntent)
-            .setAutoCancel(true)
-            .build()
-
-        val notificationManager =
-            context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        notificationManager.notify(catId.hashCode(), notification)
+//            .setAutoCancel(true)
+//            .build()
+//
+//        val notificationManager =
+//            context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+//        notificationManager.notify(catId.hashCode(), notification)
     }
 
     private fun playAlarmMusic(context: Context, name: String, id: String) {

@@ -1,5 +1,6 @@
 package co.il.catsapp.ui.fragments
 
+import android.Manifest
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
@@ -7,13 +8,17 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.media.tv.TvContract
 import android.os.Bundle
+import android.os.SystemClock
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
+import androidx.core.app.ActivityCompat
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import co.il.catsapp.R
@@ -25,6 +30,7 @@ import co.il.catsapp.services.AlarmSoundService
 import co.il.catsapp.ui.view_models.CatViewModel
 import co.il.catsapp.ui.view_models.FavoriteListViewModel
 import co.il.catsapp.utils.CatAlarmHelper
+import co.il.catsapp.utils.Constants
 import co.il.catsapp.utils.Resource
 import co.il.catsapp.utils.autoCleared
 import co.il.catsapp.utils.setGlideImage
@@ -34,9 +40,9 @@ import kotlin.random.Random
 
 @AndroidEntryPoint
 class CatFragment : Fragment() {
-
     private val viewModel: CatViewModel by viewModels()
     private var removeCatDialog: AlertDialog? = null
+    private lateinit var setAlarmIntent: PendingIntent
 
     private var binding: FragmentCatBinding by autoCleared()
 
@@ -68,11 +74,15 @@ class CatFragment : Fragment() {
                         setGlideImage(binding.root, binding.catImage, cat.data.image)
 
                         binding.reminderBtn.setOnClickListener {
-                            val delay = 5 * 1000L // Example: 5 seconds
-                            CatAlarmHelper.cancelAlarm(requireContext(), id)
-                            CatAlarmHelper.setAlarm(requireContext(), cat.data, delay)
-                            Toast.makeText(requireContext(), "Alarm set!", Toast.LENGTH_SHORT)
-                                .show()
+                            CatAlarmHelper.notify(requireContext(), "Catt", "Hello kitty")
+                            val intent =  Intent(requireActivity(),AlarmReceiver::class.java)
+                            setAlarmIntent = PendingIntent.getBroadcast(requireActivity(),
+                                ALARM_REQUEST_CODE,intent,PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+//                            val delay = 5 * 1000L // Example: 5 seconds
+//                            CatAlarmHelper.cancelAlarm(requireContext(), id)
+//                            CatAlarmHelper.setAlarm(requireContext(), cat.data, delay)
+//                            Toast.makeText(requireContext(), "Alarm set!", Toast.LENGTH_SHORT)
+//                                .show()
                         }
                         binding.removeCat.setOnClickListener {
                             viewModel.startRemoving()
@@ -133,7 +143,25 @@ class CatFragment : Fragment() {
             p.speed = sqrt(Random.nextFloat() + 0.5f)
             player.playbackParams = p
             player.start()
-            requireContext().stopService(Intent(requireContext(), AlarmSoundService::class.java))
+//            disableAlarm()
+//            requireContext().stopService(Intent(requireContext(), AlarmSoundService::class.java))
         }
+    }
+
+    private fun disableAlarm() {
+        val alarmManager = requireActivity().getSystemService(Context.ALARM_SERVICE)
+                as AlarmManager
+        alarmManager.cancel(setAlarmIntent)
+    }
+
+    private fun handleAlarm() {
+        val alarmManager = requireActivity().getSystemService(Context.ALARM_SERVICE)
+                as AlarmManager
+        val timeOfAlarm = SystemClock.elapsedRealtime() + 3000L
+        alarmManager.setExact(AlarmManager.ELAPSED_REALTIME_WAKEUP,timeOfAlarm,setAlarmIntent)
+    }
+
+    companion object {
+        const val ALARM_REQUEST_CODE = 1000
     }
 }

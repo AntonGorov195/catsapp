@@ -12,14 +12,14 @@ class AlarmSoundService : Service() {
     private var player: MediaPlayer? = null
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        val notification = NotificationCompat.Builder(this, Constants.NOTIFICATION_CHANNEL_ID)
-            .setContentTitle("Alarm Ringing")
-            .setContentText("Tap to stop the alarm")
-            .setSmallIcon(R.mipmap.ic_cat)
-            .setPriority(NotificationCompat.PRIORITY_HIGH)
-            .build()
+//        val notification = NotificationCompat.Builder(this, Constants.NOTIFICATION_CHANNEL_ID)
+//            .setContentTitle("Alarm Ringing")
+//            .setContentText("Tap to stop the alarm")
+//            .setSmallIcon(R.mipmap.ic_cat)
+//            .setPriority(NotificationCompat.PRIORITY_HIGH)
+//            .build()
 
-        startForeground(1, notification)
+//        startForeground(1, notification)
 
         stopMusicIfPlaying()
         player = MediaPlayer.create(this, R.raw.meow_alarm)
