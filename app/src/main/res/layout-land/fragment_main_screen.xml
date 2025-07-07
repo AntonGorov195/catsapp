@@ -38,7 +38,7 @@
                 app:backgroundTint="@null"
                 android:textColor="@color/light_text"
                 android:textSize="18sp"
-                android:text="App Settings"/>
+                android:text="@string/app_settings"/>
             <Button
                 android:layout_weight="1"
                 android:id="@+id/favorite_cats"
@@ -49,7 +49,7 @@
                 app:backgroundTint="@null"
                 android:textColor="@color/light_text"
                 android:textSize="18sp"
-                android:text="Favorite Cats"/>
+                android:text="@string/favorite_cats"/>
             <Button
                 android:layout_weight="1"
                 android:id="@+id/refresh_cats_list"
@@ -60,7 +60,7 @@
                 app:backgroundTint="@null"
                 android:textColor="@color/light_text"
                 android:textSize="24sp"
-                android:text="Refresh!"/>
+                android:text="@string/refresh"/>
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView

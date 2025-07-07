@@ -49,7 +49,6 @@ class CatRepository @Inject constructor(
         local.insertCat(cat.toLocal())
     }
 
-    //    fun getCat(id: String) = local.getCat(id).map { it?.toDomain() }
     fun getCat(id: String): LiveData<Resource<Cat>> = liveData {
         emit(Resource.loading())
 

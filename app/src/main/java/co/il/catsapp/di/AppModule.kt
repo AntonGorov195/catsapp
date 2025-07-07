@@ -3,7 +3,6 @@ package co.il.catsapp.di
 import android.content.Context
 import co.il.catsapp.data.local_db.AppDatabase
 import co.il.catsapp.data.remote_db.CatService
-import co.il.catsapp.data.remote_db.models.CatRemote
 import co.il.catsapp.utils.Constants
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

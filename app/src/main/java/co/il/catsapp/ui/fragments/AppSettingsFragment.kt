@@ -1,6 +1,5 @@
 package co.il.catsapp.ui.fragments
 
-import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,18 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import co.il.catsapp.R
 import co.il.catsapp.databinding.FragmentAppSettingsBinding
 import co.il.catsapp.ui.view_models.AppSettingsViewModel
-import co.il.catsapp.utils.AutoClearedValue
 import co.il.catsapp.utils.autoCleared
 import co.il.catsapp.utils.getCatCount
 import co.il.catsapp.utils.setCatCount
-import kotlinx.coroutines.launch
 
 class AppSettingsFragment : Fragment() {
     private val viewModel: AppSettingsViewModel by viewModels()
@@ -44,8 +38,6 @@ class AppSettingsFragment : Fragment() {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 val selectedItem = items[position]
                 setCatCount(requireContext(), selectedItem)
-                val saved = getCatCount(requireContext())
-                Toast.makeText(requireContext(), "Selected: $saved", Toast.LENGTH_SHORT).show()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {}

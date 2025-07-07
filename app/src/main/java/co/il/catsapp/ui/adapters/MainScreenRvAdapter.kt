@@ -1,13 +1,10 @@
 package co.il.catsapp.ui.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import co.il.catsapp.R
 import co.il.catsapp.data.models.Cat
 import co.il.catsapp.databinding.MainScreenRvBinding
 import co.il.catsapp.utils.setGlideImage

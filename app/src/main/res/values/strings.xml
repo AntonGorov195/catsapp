@@ -1,6 +1,21 @@
 <resources>
     <string name="app_name">Catsapp</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="are_you_sure_you_want_to_remove">Are you sure you want to remove %1$s</string>
+    <string name="breed_name">Breed Name</string>
+    <string name="read_more">Read More</string>
+    <string name="give_me_a_name">Give Me a Name</string>
+    <string name="add_to_favorite">Add to Favorite 😻</string>
+    <string name="app_settings">App Settings</string>
+    <string name="favorite_cats">Favorite Cats</string>
+    <string name="refresh">Refresh!</string>
+    <string name="image_of_the_cat">Image of the cat</string>
+    <string name="cat_name">Cat Name</string>
+    <string name="play_delayed_music_in_5_seconds">Play delayed music in 5 seconds</string>
+    <string name="remove_cat">REMOVE CAT</string>
+    <string name="settings">Settings</string>
+    <string name="cats_per_page">Cats Per Page</string>
+    <string name="are_you_sure_you_want_to_remove_cat_name_here">Are you sure you want to remove [cat name here]</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Catsapp</string>
+    <string name="are_you_sure_you_want_to_remove">בטוחים שאתם רוצים למחוק %1$s</string>
+    <string name="breed_name">גזע חתול</string>
+    <string name="read_more">לקרוא עוד</string>
+    <string name="give_me_a_name">תנו לי שם</string>
+    <string name="add_to_favorite">הוסיפו לרשימת אהובים 😻</string>
+    <string name="app_settings">הגדרות</string>
+    <string name="favorite_cats">רשימת אהובים</string>
+    <string name="refresh">רענן!</string>
+    <string name="image_of_the_cat">תמונת החתול</string>
+    <string name="cat_name">שם חתול</string>
+    <string name="play_delayed_music_in_5_seconds">נגן מוזיקה בעוד 5 שניות</string>
+    <string name="remove_cat">למחוק חתול</string>
+    <string name="settings">הגדרות</string>
+    <string name="cats_per_page">מספר חתולים במסך ראשי</string>
+    <string name="are_you_sure_you_want_to_remove_cat_name_here">בטוחים שאתם רוצים למחוק את</string>
+    <string name="yes">כן</string>
+    <string name="no">לא</string>
+</resources>

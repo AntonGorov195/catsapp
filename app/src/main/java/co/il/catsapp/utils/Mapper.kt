@@ -1,6 +1,5 @@
 package co.il.catsapp.utils
 
-import android.util.Log
 import co.il.catsapp.data.local_db.models.BreedLocal
 import co.il.catsapp.data.local_db.models.CatBreedLocalJoin
 import co.il.catsapp.data.local_db.models.CatLocal
@@ -24,10 +23,6 @@ fun BreedLocal.toDomain(): Breed {
         id = id,
         name = name,
         wikipediaUrl = wikipediaUrl,
-//        weight = weight.toDomain(),
-//        origin = origin,
-//        lifeSpan = lifeSpan.toDomain(),
-//        countryCode = countryCode,
     )
 }
 

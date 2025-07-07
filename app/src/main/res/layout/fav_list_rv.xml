@@ -13,7 +13,7 @@
         android:id="@+id/cat_image_view"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:contentDescription="Image of the cat"
+        android:contentDescription="@string/image_of_the_cat"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="Cat Name"
+        android:text="@string/cat_name"
         android:textColor="@color/light_text"
         android:textSize="32sp" />
 </LinearLayout>

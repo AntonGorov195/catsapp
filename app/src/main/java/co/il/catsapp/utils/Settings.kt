@@ -1,9 +1,6 @@
 package co.il.catsapp.utils
 
-import android.app.Activity
 import android.content.Context
-import android.content.SharedPreferences
-import androidx.core.content.edit
 
 private const val PREF_NAME = "cats_settings"
 private const val NUM_CATS = "cats_count"
@@ -16,5 +13,5 @@ fun getCatCount(context: Context): Int {
 fun setCatCount(context: Context, count: Int) {
     val editor = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE).edit()
     editor.putInt(NUM_CATS, count)
-    editor.apply() // or editor.commit()
+    editor.apply()
 }

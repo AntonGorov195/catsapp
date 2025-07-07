@@ -10,7 +10,6 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import co.il.catsapp.R
 import co.il.catsapp.databinding.FragmentFavoriteListBinding
 import co.il.catsapp.ui.adapters.FavListRvAdapter
 import co.il.catsapp.ui.view_models.FavoriteListViewModel
@@ -49,7 +48,8 @@ class FavoriteListFragment : Fragment() {
                     Log.e("favorite cat not found", "Couldn't read your favorite cats")
                 }
                 is Resource.Loading -> {
-                    // TODO: add loading screen
+                    // No need for a loading screen.
+                    // The loading is too fast to notice.
                 }
                 is Resource.Success -> {
                     adapter.submitList(list.data!!)

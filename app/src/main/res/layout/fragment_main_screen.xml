@@ -27,7 +27,7 @@
         app:backgroundTint="@null"
         android:textColor="@color/light_text"
         android:textSize="18sp"
-        android:text="App Settings"/>
+        android:text="@string/app_settings"/>
     <Button
         android:id="@+id/favorite_cats"
         android:layout_margin="5dp"
@@ -37,7 +37,7 @@
         app:backgroundTint="@null"
         android:textColor="@color/light_text"
         android:textSize="18sp"
-        android:text="Favorite Cats"/>
+        android:text="@string/favorite_cats"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:visibility="gone"
@@ -66,6 +66,6 @@
         app:backgroundTint="@null"
         android:textColor="@color/light_text"
         android:textSize="24sp"
-        android:text="Refresh!"/>
+        android:text="@string/refresh"/>
 
 </LinearLayout>

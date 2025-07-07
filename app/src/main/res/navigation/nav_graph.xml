@@ -24,11 +24,7 @@
         android:id="@+id/appSettingsFragment"
         android:name="co.il.catsapp.ui.fragments.AppSettingsFragment"
         android:label="fragment_app_settings"
-        tools:layout="@layout/fragment_app_settings" >
-        <action
-            android:id="@+id/settings_to_stats"
-            app:destination="@id/statsFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_app_settings" />
     <fragment
         android:id="@+id/favoriteListFragment"
         android:name="co.il.catsapp.ui.fragments.FavoriteListFragment"
@@ -39,16 +35,6 @@
             app:destination="@id/catFragment" />
     </fragment>
     <fragment
-        android:id="@+id/statsFragment"
-        android:name="co.il.catsapp.ui.fragments.StatsFragment"
-        android:label="fragment_stats"
-        tools:layout="@layout/fragment_stats" />
-    <fragment
-        android:id="@+id/votingGameFragment"
-        android:name="co.il.catsapp.ui.fragments.VotingGameFragment"
-        android:label="fragment_voting_game"
-        tools:layout="@layout/fragment_voting_game" />
-    <fragment
         android:id="@+id/catFragment"
         android:name="co.il.catsapp.ui.fragments.CatFragment"
         android:label="fragment_cat"
@@ -56,8 +42,5 @@
         <argument
             android:name="catId"
             app:argType="string"/>
-        <action
-            android:id="@+id/from_cat_to_vote_game"
-            app:destination="@id/votingGameFragment" />
     </fragment>
 </navigation>

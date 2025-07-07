@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/light"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.AppSettingsFragment">
 
     <TextView
@@ -16,7 +15,7 @@
         android:layout_margin="5dp"
         android:textColor="@color/light_text"
         android:textSize="32sp"
-        android:text="Settings" />
+        android:text="@string/settings" />
 
     <LinearLayout
         android:padding="5dp"
@@ -29,7 +28,7 @@
             android:textSize="24sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cats Per Page"/>
+            android:text="@string/cats_per_page"/>
 
         <Spinner
             android:id="@+id/cat_count"
