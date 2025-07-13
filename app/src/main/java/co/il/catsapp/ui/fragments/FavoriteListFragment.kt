@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import co.il.catsapp.R
 import co.il.catsapp.databinding.FragmentFavoriteListBinding
 import co.il.catsapp.ui.adapters.FavListRvAdapter
 import co.il.catsapp.ui.view_models.FavoriteListViewModel
@@ -44,7 +45,8 @@ class FavoriteListFragment : Fragment() {
         viewModel.favCats.observe(viewLifecycleOwner) {
             when(val list = it.status) {
                 is Resource.Error -> {
-                    Toast.makeText(requireContext(),"Couldn't get your favorite cats", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(),
+                        getString(R.string.couldn_t_get_your_favorite_cats), Toast.LENGTH_SHORT).show()
                     Log.e("favorite cat not found", "Couldn't read your favorite cats")
                 }
                 is Resource.Loading -> {

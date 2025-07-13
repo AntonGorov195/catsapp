@@ -18,4 +18,16 @@
     <string name="are_you_sure_you_want_to_remove_cat_name_here">בטוחים שאתם רוצים למחוק את</string>
     <string name="yes">כן</string>
     <string name="no">לא</string>
+    <string name="alarm_for_cat">%1$s!</string>
+    <string name="alarm_ringing">צלצול</string>
+    <string name="tap_to_stop_the_alarm">לחוץ לעצירת התראה</string>
+    <string name="couldn_t_find_your_cat">חתול לא נימצא</string>
+    <string name="couldn_t_find_cat_with_id">לא ניתן למצוא חתול</string>
+    <string name="alarm_set">התראה</string>
+    <string name="failed_opening_cat_deletion_dialog">לא ניתן למחוק חתול</string>
+    <string name="failed_finding_your_cat_s_id">לא ניתן למצוא חתול</string>
+    <string name="couldn_t_get_your_favorite_cats">לא ניתן למצוא חתולים האהובים</string>
+    <string name="successfully_added_to_favorites">חתול הוסף בהצלחה לרשימת האהובים!</string>
+    <string name="failed_adding_to_favorites">לא הוצלח להוסיף חתול לרשימת אהובים</string>
+    <string name="favorite_list">רשימת אהובים</string>
 </resources>

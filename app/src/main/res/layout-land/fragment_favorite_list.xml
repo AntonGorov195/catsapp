@@ -16,7 +16,7 @@
         android:id="@+id/fav_cats_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Favorite List" />
+        android:text="@string/favorite_cats" />
     <androidx.recyclerview.widget.RecyclerView
         android:layout_margin="5dp"
         android:id="@+id/fav_cats_list"

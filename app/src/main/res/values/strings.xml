@@ -18,4 +18,16 @@
     <string name="are_you_sure_you_want_to_remove_cat_name_here">Are you sure you want to remove [cat name here]</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="alarm_for_cat">Alarm for cat %1$s!</string>
+    <string name="alarm_ringing">Alarm Ringing</string>
+    <string name="tap_to_stop_the_alarm">Tap to stop the alarm</string>
+    <string name="couldn_t_find_your_cat">Couldn\'t find your cat :(</string>
+    <string name="couldn_t_find_cat_with_id">Couldn\'t find cat with id %1$s</string>
+    <string name="alarm_set">Alarm set!</string>
+    <string name="failed_opening_cat_deletion_dialog">Failed opening cat deletion dialog.</string>
+    <string name="failed_finding_your_cat_s_id">Failed finding your cat\'s id</string>
+    <string name="couldn_t_get_your_favorite_cats">Couldn\'t get your favorite cats</string>
+    <string name="successfully_added_to_favorites">Successfully added %1$s to favorites</string>
+    <string name="failed_adding_to_favorites">Failed adding %1$s to favorites</string>
+    <string name="favorite_list">Favorite List</string>
 </resources>

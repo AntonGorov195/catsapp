@@ -52,31 +52,31 @@ object CatAlarmHelper {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
-    fun notify(
-        context: Context,
-        title: String,
-        msg: String,
-        iconRes: Int = R.drawable.ic_cat_foreground,
-    ) {
-        val build = NotificationCompat.Builder(
-            context,
-            Constants.NOTIFICATION_CHANNEL_ID
-        )
-            .setContentTitle(title)
-            .setContentText(msg)
-            .setPriority(NotificationCompat.PRIORITY_HIGH)
-        build.setSmallIcon(iconRes)
-
-        if (ActivityCompat.checkSelfPermission(
-                context,
-                Manifest.permission.POST_NOTIFICATIONS
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            makeToast(context, "posting notification permission denied")
-            return
-        }
-
-        NotificationManagerCompat.from(context)
-            .notify(Constants.NOTIFICATION_ID, build.build())
-    }
+//    fun notify(
+//        context: Context,
+//        title: String,
+//        msg: String,
+//        iconRes: Int = R.drawable.ic_cat_foreground,
+//    ) {
+//        val build = NotificationCompat.Builder(
+//            context,
+//            Constants.NOTIFICATION_CHANNEL_ID
+//        )
+//            .setContentTitle(title)
+//            .setContentText(msg)
+//            .setPriority(NotificationCompat.PRIORITY_HIGH)
+//        build.setSmallIcon(iconRes)
+//
+//        if (ActivityCompat.checkSelfPermission(
+//                context,
+//                Manifest.permission.POST_NOTIFICATIONS
+//            ) != PackageManager.PERMISSION_GRANTED
+//        ) {
+//            makeToast(context, "posting notification permission denied")
+//            return
+//        }
+//
+//        NotificationManagerCompat.from(context)
+//            .notify(Constants.NOTIFICATION_ID, build.build())
+//    }
 }

@@ -50,8 +50,9 @@ class CatFragment : Fragment() {
             viewModel.cat.observe(viewLifecycleOwner) { catResource ->
                 when (val cat = catResource.status) {
                     is Resource.Error -> {
-                        Toast.makeText(requireContext(), "Couldn't find your cat :(", Toast.LENGTH_SHORT).show()
-                        Log.e("cat not found", "Couldn't find cat with id $id")
+                        Toast.makeText(requireContext(),
+                            getString(R.string.couldn_t_find_your_cat), Toast.LENGTH_SHORT).show()
+                        Log.e("cat not found", getString(R.string.couldn_t_find_cat_with_id, id))
                         findNavController().popBackStack()
                     }
                     is Resource.Loading -> {
@@ -63,14 +64,14 @@ class CatFragment : Fragment() {
                         setGlideImage(binding.root, binding.catImage, cat.data.image)
 
                         binding.reminderBtn.setOnClickListener {
-                            CatAlarmHelper.notify(requireContext(), "Catt", "Hello kitty")
                             val intent =  Intent(requireActivity(),AlarmReceiver::class.java)
                             setAlarmIntent = PendingIntent.getBroadcast(requireActivity(),
                                 ALARM_REQUEST_CODE,intent,PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
                             val delay = 5 * 1000L // Example: 5 seconds
                             CatAlarmHelper.cancelAlarm(requireContext(), id)
                             CatAlarmHelper.setAlarm(requireContext(), cat.data, delay)
-                            Toast.makeText(requireContext(), "Alarm set!", Toast.LENGTH_SHORT)
+                            Toast.makeText(requireContext(),
+                                getString(R.string.alarm_set), Toast.LENGTH_SHORT)
                                 .show()
                         }
                         binding.removeCat.setOnClickListener {
@@ -84,7 +85,8 @@ class CatFragment : Fragment() {
                 if (it) {
                     when (val catResource = (viewModel.cat.value ?: return@observe).status) {
                         is Resource.Error -> {
-                            Toast.makeText(requireContext(), "Failed opening cat deletion dialog.", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(),
+                                getString(R.string.failed_opening_cat_deletion_dialog), Toast.LENGTH_SHORT).show()
                             return@observe
                         }
                         is Resource.Loading -> return@observe
@@ -117,7 +119,8 @@ class CatFragment : Fragment() {
                 }
             }
         } ?: {
-            Toast.makeText(requireContext(), "Failed finding your cat's id", Toast.LENGTH_SHORT)
+            Toast.makeText(requireContext(),
+                getString(R.string.failed_finding_your_cat_s_id), Toast.LENGTH_SHORT)
                 .show()
             findNavController().popBackStack()
         }

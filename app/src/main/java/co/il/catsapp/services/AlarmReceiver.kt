@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import co.il.catsapp.R
 import co.il.catsapp.utils.Constants
 
 class AlarmReceiver : BroadcastReceiver() {
@@ -12,7 +13,8 @@ class AlarmReceiver : BroadcastReceiver() {
         val catId = intent.getStringExtra(Constants.CAT_BROADCAST_ID) ?: return
         val catName = intent.getStringExtra(Constants.CAT_BROADCAST_NAME) ?: return
 
-        Toast.makeText(context, "Alarm for cat $catName!", Toast.LENGTH_LONG).show()
+        Toast.makeText(context,
+            context.getString(R.string.alarm_for_cat, catName), Toast.LENGTH_LONG).show()
         // Start music service
         val musicIntent = Intent(context, AlarmSoundService::class.java)
         context.startService(musicIntent)

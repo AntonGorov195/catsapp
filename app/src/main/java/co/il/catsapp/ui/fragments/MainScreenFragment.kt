@@ -62,7 +62,7 @@ class MainScreenFragment : Fragment() {
         viewModel.displayedImages.observe(viewLifecycleOwner) {
             when (val resource = it.status ){
                 is Resource.Error -> {
-                    Log.d("cat err", resource.message)
+                    Log.e("cat err", resource.message)
                 }
                 is Resource.Loading -> {
                     animateCatIcon(binding.loadingWidget)
@@ -120,16 +120,15 @@ class MainScreenFragment : Fragment() {
             viewModel.addCat(cat, name, {
                 Toast.makeText(
                     requireContext(),
-                    "Successfully added $name to favorites",
+                    getString(R.string.successfully_added_to_favorites, name),
                     Toast.LENGTH_SHORT
                 ).show()
             }, {
                 Toast.makeText(
                     requireContext(),
-                    "Failed adding $name to favorites",
+                    getString(R.string.failed_adding_to_favorites, name),
                     Toast.LENGTH_SHORT
                 ).show()
-                Log.e("Cat", it.toString())
             })
             viewModel.removeFromDisplay(pos)
             viewModel.deselectCat()

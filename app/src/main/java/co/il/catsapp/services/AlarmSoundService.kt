@@ -13,8 +13,7 @@ class AlarmSoundService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         val notification = NotificationCompat.Builder(this, Constants.NOTIFICATION_CHANNEL_ID)
-            .setContentTitle("Alarm Ringing")
-            .setContentText("Tap to stop the alarm")
+            .setContentTitle(getString(R.string.alarm_ringing))
             .setSmallIcon(R.mipmap.ic_cat)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .build()
