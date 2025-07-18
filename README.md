@@ -16,7 +16,6 @@ Awesome app for cat lovers!
 - Supreme error handling for unfortunate events.
 - Minimalist esthetic centered around a powerful two color palette.
 - Set reminders for to revisit cats with the usage of Broadcast Recivers.
-- 
 
 ## Technologies
 This project uses advance Android technologies.
