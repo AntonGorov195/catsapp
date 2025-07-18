@@ -39,6 +39,6 @@ This project uses advance Android technologies.
 <img src="./.github/example_hungy-cat.png" 
      alt="Catsapp logo of and outline of a cat">
 
-## Authers
+## Authors
 
 - Anton Gorov, Lead developer and designer.
